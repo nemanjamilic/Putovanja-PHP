@@ -77,6 +77,42 @@ if (isset($_COOKIE["korisnikIme"])){
 
    
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <script>
+
+        function tabela() {
+            let tip = "SVI_TIPOVI";
+            let datum = "asc";
+            $.ajax({
+                url: 'ajax-tabela.php',
+                data: {
+                    tip: tip,
+                    datum: datum
+                },
+                success: function (podaci) {
+                    $("#tabela").html(podaci);
+                }
+            });
+        }
+        tabela();
+    
+        function filtriranaTabela() {
+            let tip = $("#tip").val();
+            let datum = $("#datum").val();
+            $.ajax({
+                url: 'ajax-tabela.php',
+                data: {
+                    tip: tip,
+                    datum: datum
+                },
+                success: function (podaci) {
+                    $("#tabela").html(podaci);
+                }
+            });
+        }
+        
+
+    </script>
     
    
 

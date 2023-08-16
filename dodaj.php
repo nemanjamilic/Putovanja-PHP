@@ -92,6 +92,31 @@ if(isset($_POST['dodaj'])){
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     
+    <script>
+        
+        function destinacije() {
+
+            $.ajax({
+                url: 'ajax-destinacije.php',
+                success: function (podaci) {
+                   $("#destinacija").html(podaci);
+                }
+            });
+        }
+        
+        function tipovi() {   
+            $.ajax({
+                url: 'ajax-tipovi.php',
+                success: function (podaci) {
+                    $("#tip").html(podaci);
+                }
+            });
+        }
+
+        destinacije();
+        tipovi();
+    
+    </script>
 
 </body>
 

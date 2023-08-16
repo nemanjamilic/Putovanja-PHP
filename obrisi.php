@@ -73,6 +73,19 @@ if(isset($_POST['obrisi'])){
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
+    <script>
+
+    function ture() {  
+
+        $.ajax({
+                url: 'ajax-ture.php',
+                success: function (podaci) {
+                    $("#tura").html(podaci);
+                }
+            });
+        }
+        ture();
+    </script>
 
 </body>
 
